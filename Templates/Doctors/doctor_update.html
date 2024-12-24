@@ -1,0 +1,93 @@
+{% extends 'main.html' %} 
+{% block content %}
+<h1 class="border border-primary m-5 p-5">Update Doctor</h1>
+<div class="m-5 border-primary">
+  <form
+    method="POST"
+    action="{% url 'Doctors:edit' doctor.id %}"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        required
+        name="fname"
+        value="{{doctor.first_name}}"
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" 
+      required
+      name="lname" value="{{doctor.last_name}}"/>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationDefault05" class="form-label">Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="validationDefault05"
+        required
+        name="age"
+        value="{{doctor.age}}"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom03" class="form-label">specialization</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom03"
+        required
+        name="specializ"
+        value="{{doctor.specialization}}"
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom04" class="form-label">mattress</label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom04"
+        required
+        name="matt"
+        value="{{doctor.mattress}}"
+      />
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">With textarea</span>
+      <textarea class="form-control" aria-label="With textarea" name="report">{{doctor.report}}</textarea
+      >
+    </div>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">medical Report</label>
+      <input
+        class="form-control"
+        type="file"
+        id="formFile"
+        name="medicalreport"
+        value="{{doctor.file_report}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Doctor Image</label>
+      <input
+        class="form-control"
+        type="file"
+        id="formImage"
+        name="image"
+        value="{{doctor.image}}"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary m-2">Submit</button>
+  </form>
+</div>
+{% endblock %}

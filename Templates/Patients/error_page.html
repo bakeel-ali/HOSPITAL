@@ -1,0 +1,12 @@
+{% include "Patients/layout/header.html" %}
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="danger">
+        <use alink:href="#exclamation-triangle-fill" />
+    </svg>
+    <div>Operation Field {{ss}}</div>
+    <hr>
+    <div>
+        <a href="{% url 'Patients:home' %}" class="btn btn-primary">Go to Home</a>
+        <a href="{% url 'Patients:create' %}" class="btn btn-primary">Add N More</a>
+    </div>
+</div>

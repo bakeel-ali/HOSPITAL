@@ -1,0 +1,11 @@
+{% include 'Doctors/layoutD/header.html' %}
+<div class="card">
+    <h5 class="card-header">Success Message:</h5>
+    <div class="card-body">
+        <h5 class="card-title">Done. </h5>
+        <p clasa="card-text">the operation Done Successed</p>
+        <a href="{% url 'Doctors:home' %}" class="btn btn-primary">Back to Home Page</a>
+        <a href="{% url 'Doctors:create' %}" class="btn btn-primary">Add more Doctors</a>
+        <a href="{% url 'Doctors:show' %}" class="btn btn-primary">All Doctors</a>
+    </div>
+</div>
